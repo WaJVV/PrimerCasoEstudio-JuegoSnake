@@ -203,3 +203,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     document.getElementById('hiddenScore').value = score + " pts";
     document.forms[0].submit();
 });
+
+function gotoMain() {
+            window.location.href = "Main";
+        }

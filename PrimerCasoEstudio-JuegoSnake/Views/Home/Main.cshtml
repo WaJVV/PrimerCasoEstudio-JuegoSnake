@@ -15,16 +15,6 @@
         color: #333;
     }
 
-    .start {
-        width: 20%;
-        padding: 10px;
-        background-color: #007bff;
-        border: none;
-        color: #fff;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-    }
 </style>
 
 @if (Model != null)
@@ -43,6 +33,7 @@
                     </div>
                 </div>
                 <button id="cambiarEstado" class="start">Iniciar</button>
+                <button id="submitBtn" class="start">Submit to HighScore</button>
             </nav>
         </header>
 
@@ -57,7 +48,7 @@
             <input type="hidden" name="time" id="hiddenTiempo" />
             <input type="hidden" name="score" id="hiddenScore" />
         </form>
-        <button id="submitBtn">Submit to HighScore</button>
+        
     </body>
 }
 else

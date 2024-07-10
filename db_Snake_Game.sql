@@ -14,3 +14,13 @@ CREATE TABLE Users (
 );
 
 SELECT * FROM Users
+
+CREATE TABLE HighScore (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    [user] VARCHAR(255),
+    time VARCHAR(255),
+    score VARCHAR(255),
+    CONSTRAINT FK_User4 FOREIGN KEY ([user]) REFERENCES Users([user])
+);
+
+SELECT * FROM HighScore

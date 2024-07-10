@@ -197,3 +197,9 @@ function cambiarEstado() {
 }
 
 botonCambiarEstado.addEventListener('click', cambiarEstado);
+
+document.getElementById('submitBtn').addEventListener('click', function () {
+    document.getElementById('hiddenTiempo').value = minutos + " min " + segundos + " seg";
+    document.getElementById('hiddenScore').value = score + " pts";
+    document.forms[0].submit();
+});

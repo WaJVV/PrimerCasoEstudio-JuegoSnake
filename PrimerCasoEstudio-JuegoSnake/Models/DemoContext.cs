@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace PrimerCasoEstudio_JuegoSnake.Models
 {
@@ -17,9 +18,8 @@ namespace PrimerCasoEstudio_JuegoSnake.Models
             }
         }
 
-
-
         public DbSet<User> Users { get; set; }
+        public DbSet<HighScore> HighScore { get; set; }
     }
 }
 

@@ -90,8 +90,43 @@ namespace PrimerCasoEstudio_JuegoSnake.Controllers
             }
             return Content("<a>SALIO MAL</a>");
         }
-        
 
+
+
+        public IActionResult Users_Record()
+        {
+            List<HighScore> usersList;
+            using (var context = new DemoContext())
+            {
+                usersList = context.HighScore.ToList(); // Fetch all users from the database
+            }
+            return View(usersList); // Pass the list of users to the view
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SubmitFormHighScore(string time, string score)
+        {
+            var userName = HttpContext.Session.GetString("user");
+
+            if (userName != null)
+            {
+                using (var context = new DemoContext())
+                {
+                    var puntaje = new HighScore
+                    {
+                        user = userName,
+                        time = time,
+                        score = score
+                    };
+
+                    context.Add(puntaje);
+                    await context.SaveChangesAsync();
+                    return RedirectToAction("Users_Record");
+                }
+            }
+
+            return Content("<a>SALIO MAL</a>");
+        }
 
 
 

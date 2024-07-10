@@ -2,6 +2,30 @@
 @{
     ViewData["Title"] = "Main Page";
 }
+<style>
+    puntajes {
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        margin: 0;
+    }
+
+    #contador {
+        font-size: 48px;
+        color: #333;
+    }
+
+    .start {
+        width: 25%;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
 
 @if (Model != null)
 {
@@ -18,8 +42,15 @@
                         </div>
                     </div>
                 </div>
+                <button id="cambiarEstado" class="start">Iniciar</button>
             </nav>
         </header>
+
+
+        <div id="contador" class="puntajes">Tiempo:</div>
+        <div id="score" class="puntajes">Puntaje:</div>
+
+        <canvas id="board"></canvas>
     </body>
 }
 else
